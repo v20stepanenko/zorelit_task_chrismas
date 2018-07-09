@@ -4,6 +4,16 @@
     font-weight: 700;
 }
 
+.santa{
+    position: relative;
+    width: 317px;
+    height: 179px;
+    background: url("../img/general/santa.png");
+    background-repeat: no-repeat;
+    bottom: 0px;
+    left: 30px;
+}
+
 header{
     position: relative;
     background-image: linear-gradient(to top, #9fe6e7 0%, #0faac9 100%);
@@ -12,6 +22,9 @@ header{
     .container{
         position: relative;
         z-index: 10;
+    }
+    .logo{
+        margin-top: 19px;
     }
     .mask{
         position: absolute;
@@ -24,6 +37,14 @@ header{
             background: url("../img/general/bottom-header.png");
             height: 241px;
             width: 100%;
+        }
+        .snow{
+            position: absolute;
+            background: url("../img/general/snowflakes.png");
+            background-repeat: no-repeat;
+            margin-left: 75px;
+            height: 550px;
+            width: 1815px;
         }
     }
 }
@@ -95,12 +116,142 @@ section.middle{
     background-image: radial-gradient(circle 395px at 52.94% 220.8%, #ff5d42 0%, #df4127 100%);
     padding: 50px;
     h2{
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
         color: #ffffff;
         font-family: Altair;
         font-size: 28px;
         font-weight: 700;
         line-height: 38px;
-        text-transform: uppercase;
         margin-bottom: 20px;
+        span{
+            text-transform: uppercase;
+
+        }
+    }
+    img{
+        margin-top: 30px;
+    }
+}
+
+form{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-top: 125px;
+    background: #ffffff;
+    padding: 37px 31px 60px;
+    box-shadow: 0 0 6px rgba(42, 41, 41, 0.15);
+    border-radius: 10px;
+    &:before, &:after{
+        content: '';
+        display: block;
+        position: absolute;
+        width: 105%;
+        height: 105%;
+        top: 0;
+        left: 0;
+        transform: translate(-2.5%, -2.5%);
+        border-radius: 10px;
+    }
+    &:before{
+        background-color: #fcfcfc;
+        z-index: -2;
+    }
+    &:after{
+        background: url("../img/general/mask-form.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        z-index: -1;
+    }
+    h3{
+        color: #df4127;
+        font-family: Altair;
+        font-size: 30px;
+        font-weight: 700;
+        letter-spacing: 0.48px;
+        text-align: center;
+        margin-bottom: 35px;
+    }
+    input{
+        margin-bottom: 5px;
+        padding: 15px 10px;
+        color: #a3a0a0;
+        font-family: "Open Sans", sans-serif;
+        font-size: 14px;
+        font-weight: 400;
+        letter-spacing: 0.3px;
+        outline: none;
+        border-radius: 5px;
+        border: 1px solid #bebebe;
+        background-color: #ffffff;
+    }
+    button{
+        margin-top: 20px;
+        border: none;
+        outline: none;
+        text-align: center;
+        border-radius: 5px;
+        color: #fffefe;
+        border-bottom: 4px solid #7ab822;
+        background: #81ce15;
+        font-family: "Open Sans", sans-serif;
+        font-size: 14px;
+        font-weight: 700;
+        font-size: 14px;
+        letter-spacing: 0.48px;
+        span{
+            font-size: 25px;
+            letter-spacing: 0.75px;
+            text-transform: uppercase;
+        }
+    }
+}
+
+footer{
+    background-color: #82dae1;
+    .ball-wrapper{
+        //display: flex;
+    }
+    .ball{
+        border-radius: 100%;
+        display: inline-block;
+        float: left;
+        &:first-of-type{
+            width: 235px;
+            height: 235px;
+        }
+        &:nth-of-type(2){
+            width: 245px;
+            height: 245px;
+        }
+        &:nth-of-type(3){
+            width: 246px;
+            height: 246px;
+        }
+        &:nth-of-type(4){
+            width: 212px;
+            height: 212px;
+        }
+    }
+    .ball_red{
+        color: #fff;
+        background: #df4127;
+    }
+    .ball_white{
+        color: #df4127;
+        background: #fff;
+    }
+    .ball__name{
+        font-family: Altair, sans-serif;
+        font-size: 20px;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+    }
+    .ball__text{
+        font-family: "Open Sans - Semibold";
+        font-size: 16px;
+        font-weight: 400;
     }
 }

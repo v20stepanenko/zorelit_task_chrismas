@@ -1,32 +1,10 @@
-// Mixins.
-
-@mixin nl {
-    margin: 0;
-    padding: 0;
-    text-indent: 0;
-    list-style: none;
-    list-style-position: outside;
+@mixin altair-b(){
+    font-family: Altair, Arial, sans-serif;
+    font-size: 25px;
+    font-weight: 700;
 }
 
-@mixin cf {
-    &:before,
-    &:after {
-        display: table;
-        content: "";
-    }
-
-    &:after {
-        clear: both;
-    }
-
-    .lt-ie8 & {
-        zoom: 1;
-    }
+@mixin square($val){
+    width: $val+px;
+    height: $val+px;
 }
-
-@mixin blocks-justify {
-    text-align: justify;
-    text-justify: newspaper;
-}
-
-// You can add your own mixins here:

@@ -1,0 +1,15 @@
+.snowman{
+    @include bg($snowman);
+}
+
+.hat{
+    @include bg($hat);
+}
+
+.tree{
+    @include bg($tree);
+}
+
+.glass{
+    @include bg($glass)
+}

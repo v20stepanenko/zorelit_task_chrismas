@@ -1,9 +1,4 @@
-@mixin altair-b(){
-    font-family: Altair, Arial, sans-serif;
-    font-size: 25px;
-    font-weight: 700;
-}
-
+@import "mixins";
 .santa{
     position: relative;
     width: 317px;
@@ -16,6 +11,7 @@
 
 header{
     position: relative;
+    overflow: hidden;
     background-image: linear-gradient(to top, #9fe6e7 0%, #0faac9 100%);
     padding-bottom: 200px;
     padding-top: 19px;
@@ -91,7 +87,8 @@ header{
         content: '';
         display: block;
         width: 100%;
-
+        background-repeat: no-repeat;
+        margin: 0 auto;
     }
     &:after{
         background: url("../img/general/bot -title.png");
@@ -115,16 +112,18 @@ header{
 section.middle{
     background-image: radial-gradient(circle 395px at 52.94% 220.8%, #ff5d42 0%, #df4127 100%);
     padding: 50px;
+    position: relative;
     h2{
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
         color: #ffffff;
-        font-family: Altair;
+        font-family: Altair, "Open Sans";
         font-size: 28px;
         font-weight: 700;
         line-height: 38px;
         margin-bottom: 20px;
+        white-space: nowrap;
         span{
             text-transform: uppercase;
 
@@ -132,6 +131,7 @@ section.middle{
     }
     img{
         margin-top: 30px;
+        width: 80%;
     }
 }
 
@@ -211,37 +211,127 @@ form{
 
 footer{
     background-color: #82dae1;
-    .ball-wrapper{
-        //display: flex;
+    min-height: 640px;
+    overflow: hidden;
+    .title{
+        position: relative;
+        z-index: 5;
+        margin-top: 35px;
+        display: inline-block;
+        &:before, &:after{
+            content: ' ';
+            display: block;
+            position: absolute;
+            bottom: -20px;
+            border-style: solid;
+        }
+        &:after{
+            right: 0;
+            border-width: 21px 54px 0 0;
+            border-color: #b7321c transparent transparent transparent;
+        }
+        &:before{
+            left: 0;
+            border-width: 21px 0 0 54px;
+            border-color: #b7321c transparent transparent transparent;
+        }
+        .figure{
+            position: absolute;
+            z-index: -1;
+            height: 100%;
+            background: #d33e25;
+            width: 91px;
+            top: 20px;
+            &_left{
+                left: $figure-title;
+            }
+            &_right{
+                right: $figure-title;
+            }
+        }
+        h2{
+            position: relative;
+            z-index: 10;
+            padding: 20px 30px;
+            background: $col-red;
+            margin: 0;
+            color: #ffffff;
+            font-family: Altair;
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: 0.7px;
+        }
+    }
+    .container{
+        position: relative;
     }
     .ball{
+        position: absolute;
         border-radius: 100%;
-        display: inline-block;
-        float: left;
+        transform: translateX(-50%);
+        padding: 10px 35px;
+        &:after, &:before{
+            content: ' ';
+            display: block;
+            position: absolute;
+            z-index: 5;
+        }
+        &:after{
+            top: -999px;
+            left: 50%;
+            height: 999px;
+            width: 4px;
+            transform: translateX(-50%);
+        }
+        &:before{
+            @include bg($bow);
+            top: 0;
+            left: 50%;
+            transform: translate(-50%, -98%);
+            z-index: 6;
+        }
         &:first-of-type{
             width: 235px;
             height: 235px;
+            top: 326px;
+            left: 12%;
+            &:before{
+                transform: translate(-50%, -83%) scale(.7);
+            }
         }
         &:nth-of-type(2){
             width: 245px;
             height: 245px;
+            top: 191px;
+            left: 36%;
         }
         &:nth-of-type(3){
             width: 246px;
             height: 246px;
+            top: 363px;
+            left: 63.8%;
         }
         &:nth-of-type(4){
             width: 212px;
             height: 212px;
+            top: 195px;
+            left: 87.8%;
+            padding: 10px 15px;
         }
     }
     .ball_red{
         color: #fff;
         background: #df4127;
+        &:after{
+            background: #df4127;
+        }
     }
     .ball_white{
         color: #df4127;
         background: #fff;
+        &:after{
+            background: #fff;
+        }
     }
     .ball__name{
         font-family: Altair, sans-serif;
@@ -250,8 +340,11 @@ footer{
         letter-spacing: 0.5px;
     }
     .ball__text{
-        font-family: "Open Sans - Semibold";
+        font-family: "Open Sans", sans-serif;
         font-size: 16px;
-        font-weight: 400;
+        font-weight: 700;
+    }
+    .icon{
+        display: inline-block;
     }
 }
